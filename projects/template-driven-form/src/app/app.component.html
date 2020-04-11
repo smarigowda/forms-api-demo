@@ -1,1 +1,11 @@
 <h1>Template Drivern Form API</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)" action="#">
+  <label>User Name: <input type="text" name="username" ngModel></label>
+  <label>SSN: <input type="text" name="ssn" ngModel></label>
+  <div ngModelGroup="passwordsGroup">
+    <label>Password: <input type="password" name="password" ngModel></label>
+    <label>Confirm Password: <input type="password" name="confirmPassword" ngModel></label>
+  </div>
+  <hr>
+  <button type="submit">Submit</button>
+</form>

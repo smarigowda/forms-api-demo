@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'template-driven-form';
+  onSubmit(value) {
+    console.log('form submitted!');
+    console.log('value = ', value);
+  }
 }
