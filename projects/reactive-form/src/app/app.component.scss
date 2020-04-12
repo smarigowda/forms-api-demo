@@ -10,25 +10,24 @@ form {
   font-size: 2rem;
 }
 
-input {
-  font-size: 2rem;
-  outline: none;
-  border: none;
-  margin-right: 1rem;
-  border-radius: 5px;
-  padding: 1rem;
-}
+// input {
+//   font-size: 2rem;
+//   outline: none;
+//   border: none;
+//   border-radius: 5px;
+//   padding: 1rem;
+// }
 
-button {
-  font-size: 2rem;
-  padding: .5rem 2rem;
-  border-radius: 5px;
+// button {
+//   font-size: 2rem;
+//   padding: .5rem 2rem;
+//   border-radius: 5px;
 
-  &:hover {
-    background-color: cyan;
-    outline: none;
-  }
-}
+//   &:hover {
+//     background-color: cyan;
+//     outline: none;
+//   }
+// }
 
 label {
   display: block;
@@ -38,3 +37,11 @@ label {
 button[type=submit] {
   margin-top: 1rem;
 }
+
+.container {
+  width: 50%;
+}
+
+// label {
+//   display: inline;
+// }

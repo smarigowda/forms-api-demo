@@ -1,12 +1,68 @@
-<article class="message is-dark">
-  <div class="message-header">
-    <p>Reactive Forms API Demo</p>
-  </div>
-</article>
+<div class="box is-size-3">
+  <h1 class="has-text-centered has-text-primary">Reactive Forms API Demo</h1>
+</div>
+
 <form action="#" [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
   <div formGroupName="dateRange">
-    <input type="date" formControlName="from">
-    <input type="date" formControlName="to">
+    <div class="columns is-centered">
+      <div class="column has-text-left">
+        <div class="field">
+          <div class="control">
+            <div class="container">
+              <label class="label">From</label>
+              <input type="date" formControlName="from" class="input is-primary">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column has-text-left">
+        <div class="container">
+          <label class="label">To</label>
+          <input type="date" formControlName="to" class="input is-primary">
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="submit">Submit</button>
+
+  <div class="columns is-centered">
+    <div class="column">
+      <div class="container">
+        <label class="label">User Name</label>
+        <input type="text" formControlName="username" class="input is-primary">
+      </div>
+    </div>
+    <div class="column">
+      <div class="container">
+        <label class="label">SSN</label>
+        <input type="text" formControlName="ssn" class="input is-primary">
+      </div>
+    </div>
+  </div>
+
+  <div formGroupName="passwordsGroup">
+    <div class="columns is-centered">
+      <div class="column has-text-left">
+        <div class="field">
+          <div class="control">
+            <div class="container">
+              <label class="label">Password:</label>
+              <input type="password" formControlName="password" class="input is-primary">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column has-text-left">
+        <div class="container">
+          <label class="label">Confirm Password:</label>
+          <input type="password" formControlName="pconfirm" class="input is-primary">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column has-text-centered">
+      <button type="submit" class="button is-primary">Submit</button>
+    </div>
+  </div>
 </form>
