@@ -2,7 +2,7 @@
   <h1 class="has-text-centered has-text-primary">Reactive Forms API Demo</h1>
 </div>
 
-<form action="#" [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
+<form action="#" #f="ngForm" [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
   <div formGroupName="dateRange">
     <div class="columns is-centered">
       <div class="column has-text-left">
@@ -35,6 +35,9 @@
       <div class="container">
         <label class="label">SSN</label>
         <input type="text" formControlName="ssn" class="input is-primary">
+        <div [hidden]="myFormModel.pristine || myFormModel.valid">
+          <div [hidden]="!myFormModel.hasError('ssn', 'ssn')" class="has-text-danger is-size-6">SSN should have 9 digits</div>
+        </div>
       </div>
     </div>
   </div>

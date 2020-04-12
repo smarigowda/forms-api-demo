@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, ValidationErrors, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   constructor() {
     this.myFormModel = new FormGroup({
       username: new FormControl(''),
-      ssn: new FormControl(''),
+      ssn: new FormControl('', this.ssnValidator),
       passwordsGroup: new FormGroup({
         password: new FormControl(''),
         pconfirm: new FormControl('')
@@ -25,5 +25,10 @@ export class AppComponent {
   onSubmit() {
     console.log('Form submitted...');
     console.log(this.myFormModel);
+  }
+  ssnValidator(control: FormControl): ValidationErrors | null {
+    const value = control.value || '';
+    const valid = value.match(/^\d{9}$/);
+    return valid ? null : { ssn: true };
   }
 }
