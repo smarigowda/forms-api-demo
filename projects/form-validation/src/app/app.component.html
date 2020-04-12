@@ -7,7 +7,7 @@
       <div class="column">
         <label class="label">Phone Number:</label>
         <input type="text" name="telephone" ngModel required pattern="[0-9]*" minlength="10" #phone="ngModel"
-          [ngModelOptions]="{updateOn: 'submit'}" class="input is-primary">
+          [ngModelOptions]="{updateOn: 'blur'}" class="input is-primary">
         <div [hidden]="phone.valid || phone.pristine">
           <div [hidden]="!phone.hasError('required')" class="has-text-danger">Phone number is required</div>
           <div [hidden]="!phone.hasError('minlength')" class="has-text-danger">Phone number should have atleast 10
