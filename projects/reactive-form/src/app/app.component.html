@@ -1,1 +1,12 @@
-<h1>Reactive Forms</h1>
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Reactive Forms API Demo</p>
+  </div>
+</article>
+<form action="#" [formGroup]="myFormModel" (ngSubmit)="onSubmit()">
+  <div formGroupName="dateRange">
+    <input type="date" formControlName="from">
+    <input type="date" formControlName="to">
+  </div>
+  <button type="submit">Submit</button>
+</form>

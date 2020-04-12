@@ -14,7 +14,7 @@ input {
   font-size: 2rem;
   outline: none;
   border: none;
-  margin-left: 1rem;
+  margin-right: 1rem;
   border-radius: 5px;
   padding: 1rem;
 }
@@ -32,5 +32,9 @@ button {
 
 label {
   display: block;
-  margin: 1rem;
+  margin-right: 1rem;
+}
+
+button[type=submit] {
+  margin-top: 1rem;
 }
