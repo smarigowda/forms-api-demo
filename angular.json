@@ -754,7 +754,8 @@
               "projects/async-validation/src/assets"
             ],
             "styles": [
-              "projects/async-validation/src/styles.scss"
+              "projects/async-validation/src/styles.scss",
+              "./node_modules/bulma/css/bulma.css"
             ],
             "scripts": []
           },
