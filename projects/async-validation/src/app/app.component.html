@@ -10,8 +10,14 @@
               <label class="label">Enter your SSN:</label>
               <input type="text" formControlName="ssnControl" class="input is-primary">
               <div *ngIf="myForm.controls['ssnControl'].dirty">
-                <div *ngIf="myForm.hasError('ssn', 'ssnControl')" class="has-text-danger">SSN is not valid ! Minimum 9 digits</div>
+                <div *ngIf="myForm.hasError('ssn', 'ssnControl'); else validSSN" class="has-text-danger">SSN is not valid ! Minimum 9
+                  digits</div>
+                <div *ngIf="myForm.hasError('work', 'ssnControl')" class="has-text-danger">
+                  {{myForm.get('ssnControl').errors.work}}</div>
               </div>
+              <ng-template #validSSN>
+                <div class="has-text-info">SSN is valid</div>
+              </ng-template>  
             </div>
           </div>
         </div>

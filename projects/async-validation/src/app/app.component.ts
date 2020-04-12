@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { SSNValidatorService } from './shared/ssn.validator.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,9 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 export class AppComponent {
   myForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, ssnValidatorService: SSNValidatorService) {
     this.myForm = fb.group({
-      ssnControl: ['', this.ssnValidator]
+      ssnControl: ['', this.ssnValidator, ssnValidatorService.checkWorkAuthorisation.bind(ssnValidatorService)]
     })
   }
 
