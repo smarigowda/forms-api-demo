@@ -11,7 +11,7 @@ export class AppComponent {
   constructor() {
     this.myFormModel = new FormGroup({
       username: new FormControl(''),
-      ssn: new FormControl('', this.ssnValidator),
+      socialSecurity: new FormControl('', this.ssnValidator),
       passwordsGroup: new FormGroup({
         password: new FormControl(''),
         pconfirm: new FormControl('')
@@ -29,6 +29,6 @@ export class AppComponent {
   ssnValidator(control: FormControl): ValidationErrors | null {
     const value = control.value || '';
     const valid = value.match(/^\d{9}$/);
-    return valid ? null : { ssn: true };
+    return valid ? null : { ssn: { description: 'SSN should have 9 digits...' } };
   }
 }

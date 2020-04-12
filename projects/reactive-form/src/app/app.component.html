@@ -34,9 +34,11 @@
     <div class="column">
       <div class="container">
         <label class="label">SSN</label>
-        <input type="text" formControlName="ssn" class="input is-primary">
+        <input type="text" formControlName="socialSecurity" class="input is-primary">
         <div [hidden]="myFormModel.pristine || myFormModel.valid">
-          <div [hidden]="!myFormModel.hasError('ssn', 'ssn')" class="has-text-danger is-size-6">SSN should have 9 digits</div>
+          <div [hidden]="!myFormModel.hasError('ssn', 'socialSecurity')" class="has-text-danger is-size-6">
+            {{myFormModel.getError('ssn', 'socialSecurity')?.description}}
+          </div>
         </div>
       </div>
     </div>
