@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,18 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   myFormModel: FormGroup;
-  constructor() {
-    this.myFormModel = new FormGroup({
-      id: new FormControl(''),
-      description: new FormControl(''),
-      seller: new FormControl('')
+  // constructor() {
+  //   this.myFormModel = new FormGroup({
+  //     id: new FormControl(''),
+  //     description: new FormControl(''),
+  //     seller: new FormControl('')
+  //   });
+  // }
+  constructor(fb: FormBuilder) {
+    this.myFormModel = fb.group({
+      id: [''],
+      description: [''],
+      seller: ['']
     });
   }
   updateEntireForm() {   
