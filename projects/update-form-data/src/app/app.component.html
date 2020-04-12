@@ -1,0 +1,27 @@
+<div class="box">
+  <h1 class="is-size-3 has-text-centered has-text-info">
+    Updating Form Data
+  </h1>
+</div>
+
+<form action="#" [formGroup]="myFormModel">
+  <div class="columns">
+    <div class="column">
+      <label class="label">Product ID:</label>
+      <input type="text" formControlName="id" class="input is-primary">
+    </div>
+    <div class="column">
+      <label class="label">Description:</label>
+      <input type="text" formControlName="description" class="input is-primary">
+    </div>
+    <div class="column">
+      <label class="label">Seller:</label>
+      <input type="text" formControlName="seller" class="input is-primary">
+    </div>
+  </div>
+</form>
+<div class="container has-text-centered">
+  <button (click)="updateEntireForm()" class="button is-primary">Update Full</button>
+  <button (click)="updatePartOfTheForm()" class="button is-primary">Update Part</button>
+  <button (click)="myFormModel.reset()" class="button is-primary">Reset</button>
+</div>
