@@ -45,3 +45,7 @@ button[type=submit] {
 // label {
 //   display: inline;
 // }
+
+.ssn.ng-dirty.ng-invalid {
+  background-color: pink;
+}
